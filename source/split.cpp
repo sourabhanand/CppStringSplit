@@ -12,7 +12,6 @@
 *****************************************************************************/
 
 #include "split.h"
-#include <iostream>
 
 using namespace stringhelper;
 
