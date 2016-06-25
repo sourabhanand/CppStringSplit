@@ -41,7 +41,7 @@ std::vector<std::string> stringhelper::split(std::string &fullStr,
         {
             if (splitBehaviour == KEEP_EMPTY_PARTS)
             {
-                tokens.push_back("");
+                tokens.push_back(_temp);
             }
         }
         else
@@ -55,7 +55,7 @@ std::vector<std::string> stringhelper::split(std::string &fullStr,
     {
         if (splitBehaviour == KEEP_EMPTY_PARTS)
         {
-            tokens.push_back("");
+            tokens.push_back(_temp);
         }
     }
     else
