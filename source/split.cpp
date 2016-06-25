@@ -12,6 +12,9 @@
 *****************************************************************************/
 
 #include "split.h"
+#include <iostream>
+
+using namespace std;
 
 using namespace stringhelper;
 
@@ -27,16 +30,15 @@ using namespace stringhelper;
  *
  */
 std::vector<std::string> stringhelper::split(std::string &fullStr,
-                                             std::string delimiter,
+                                             char delimiter,
                                              Behaviour splitBehaviour)
 {
     std::vector<std::string> tokens;
-    size_t idx, start = 0, end = fullStr.length();
+    size_t idx, start = 0;
     std::string _temp;
     while ((idx = fullStr.find(delimiter, start)) != std::string::npos)
     {
         _temp = fullStr.substr(start, idx-start);
-
         if (_temp.length() == 0)
         {
             if (splitBehaviour == KEEP_EMPTY_PARTS)
@@ -50,7 +52,7 @@ std::vector<std::string> stringhelper::split(std::string &fullStr,
         }
         start = idx + 1;
     }
-    _temp =  fullStr.substr(start, end);
+    _temp =  fullStr.substr(start);
     if (_temp.length() == 0)
     {
         if (splitBehaviour == KEEP_EMPTY_PARTS)

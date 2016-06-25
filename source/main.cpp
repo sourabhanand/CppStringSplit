@@ -19,14 +19,13 @@ int main(int argc, char *argv[])
     std::string input;
     std::cin >> input;
 
-    std::vector<std::string> tokens = stringhelper::split(input, ":",
+    std::vector<std::string> tokens = stringhelper::split(input, ':',
                                                 stringhelper::KEEP_EMPTY_PARTS);
 
     for (size_t i = 0; i < tokens.size(); ++i)
     {
         std::cout << tokens[i] << "\n";
     }
-
     std::cin.ignore();
     std::cin.get();
     return 0;

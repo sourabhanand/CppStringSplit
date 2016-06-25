@@ -20,7 +20,7 @@
 namespace stringhelper {
     enum Behaviour { KEEP_EMPTY_PARTS, SKIP_EMPTY_PARTS };
 
-    std::vector<std::string> split(std::string &fullStr, std::string delimiter,
+    std::vector<std::string> split(std::string &fullStr, char delimiter,
                                    Behaviour = KEEP_EMPTY_PARTS);
 
 } // namespace stringhelper
